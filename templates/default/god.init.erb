@@ -22,6 +22,7 @@ case "$1" in
   ;;
     stop)
       <%= node[:god][:bin] %> <%= node['god']['init']['stop_command'] %>
+      true # since stopping twice can lead to errors
       RETVAL=$?
   ;;
     restart)
