@@ -21,11 +21,11 @@ case "$1" in
       RETVAL=$?
   ;;
     stop)
-      <%= node[:god][:bin] %> terminate
+      <%= node[:god][:bin] %> <%= node['god']['init']['stop_command'] %>
       RETVAL=$?
   ;;
     restart)
-      <%= node[:god][:bin] %> terminate
+      <%= node[:god][:bin] %> <%= node['god']['init']['stop_command'] %>
       <%= node[:god][:bin] %> -c $CONF_DIR/master.god
       RETVAL=$?
   ;;

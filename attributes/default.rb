@@ -3,6 +3,8 @@ default['god']['init_style']        = 'runit'
 default['god']['email']['from']     = 'god@'+node[:domain].to_s
 default['god']['email']['contacts'] = [['dev', 'developers@'+node[:domain].to_s, 'developers']]
 
+default['god']['init']['stop_command'] = 'terminate'
+
 default['god']['email']['server']['delivery_method'] = :smtp
 default['god']['email']['server']['server_host'] = 'localhost'
 default['god']['email']['server']['server_port'] = 25
